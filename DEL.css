@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+}
+a{
+    position: relative;
+    width: 150px;
+    height: 100px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    box-shadow: 0.7px 1px #222 ;
+}
+a span{
+    position: absolute;
+    top: -4px;
+    left: 40px;
+    width: 18px;
+    height: 20px;
+    display: inline-block;
+    background-color: #fff;
+    border-bottom-left-radius: 3.4px;
+    border-bottom-right-radius: 3.4px;
+    transition: 0.5s;
+   
+}
+a:hover span{
+    transform: scale(1.5) rotate(60deg) translateY(10px);
+}
+a.active span{
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    width: 20px;
+    height: 10px ;
+    background-color: transparent;
+    border-left: 2px solid #fff;
+    border-bottom:2px solid #fff ;
+}
+a.active{
+    background-color: blue;
+}
+
+a span::before{
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 18px;
+    height: 2px;
+    background-color: #fff;
+  
+    box-shadow: 12px -2px 0 #222,
+    12px -3px 0  #222,
+    15px -1px 0  #222,
+    6px -2px 0 #fff;
+    transition: 0.5s;
+}
+a.active:hover span::before
+a.active span::before{
+  transform: scale(0);
+}
+a:hover span::before{
+    transform:  rotate(-80deg) translateY(-10px) translateX(50%);
+}
+a text{
+    position: absolute;
+    top: -7px;
+    right: 40px;
+    color: #fff;
+    transition: 0.5s;
+    text-decoration: none;
+}
+a:hover text
+a.active text{
+    transform:   translateY(-5px) translateX(-50px) scale(0);
+}
